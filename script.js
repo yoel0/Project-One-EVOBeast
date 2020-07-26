@@ -6,7 +6,7 @@ canvas.width = window.innerWidth;
 // load images
 const images = {};
 images.player = new Image();
-images.player.src = "characters/character.png";
+images.player.src = "images/character.png";
 
 const playerWidth = "333.333333";
 const playerHeight = "204.8";

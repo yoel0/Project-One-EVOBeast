@@ -36,3 +36,8 @@ function animate() {
 }
 
 window.onload = setInterval(animate, 1000 / 30);
+
+window.addEventListener("resize", function () {
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+});

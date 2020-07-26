@@ -30,6 +30,15 @@ canvas {
   display: inline-block;
 }
 
+#copyright {
+  color: #fff;
+  float: right;
+  line-height: 32px;
+  margin-left: 200px;
+  margin-top: 10px;
+  text-align: center;
+}
+
 footer {
   position: absolute;
   width: 100%;

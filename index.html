@@ -7,21 +7,61 @@
     <link rel="stylesheet" text="text/css" href="./style.css" />
   </head>
   <body>
-    <header></header>
+    <header>
+      <div class="game-title">
+        <h2 class="rotate">EVO</h2>
+        <h2>bEAST</h2>
+      </div>
+    </header>
     <main>
       <div class="floor"></div>
       <canvas id="canvas"></canvas>
     </main>
+    <section>
+      <div class="start-game">
+        <button type="button" id="startButton">Start EVOBeast</button>
+      </div>
+      <div class="how-to-play">
+        <button type="button" id="infoButton">How To Play</button>
+      </div>
+      <div class="info-screen">
+        <div class="info-content">
+          <h3>How To Play</h3>
+          <p>
+            Use the w, a, s, d, keys to move EVO Beast and the space bar to
+            devour rabbits as you race to reach Evolution before the Hunter
+            devours you! Once you reach Evolution D E V O U R the Hunter.
+          </p>
+          <br />
+          <img src="./images/wabbit.gif" width="50" height="50" />
+          <button type="button" id="info-close">Close</button>
+        </div>
+      </div>
+      <div class="won-screen">
+        <div class="won-content">
+          <h3>You WON!</h3>
+          <p>You consumed the Hunter, you voracious BEAST.</p>
+          <button type="button" id="reset-game-button">Devour Again?</button>
+        </div>
+      </div>
+      <div class="gameover-screen">
+        <div class="gameover-content">
+          <h3>GAME OVER</h3>
+          <p>Here in the Ruins, dark and deep I offer you eternal sleep.</p>
+          <button type="button" id="gameover-button">Devour Again?</button>
+        </div>
+      </div>
+    </section>
     <footer>
-      <a href="https://github.com/yoel0/Project-One-EVOBeast" target="”_blank”"
+      <a href="https://github.com/yoel0/Project-One-EVOBeast" target="_blank"
         ><img class="icon" src="./images/github-logo.png"
       /></a>
       <a
         href="https://www.linkedin.com/in/yoel-morad-892b641b2/"
-        target="”_blank”"
+        target="_blank"
         ><img class="icon" src="./images/linkedin-logo.png"
       /></a>
-      <a href="mailto:#" target="”_blank”"
+      <a href="mailto:#" target="_blank"
         ><img class="icon" src="./images/mail-logo.png"
       /></a>
       <span id="copyright"> Created by Yoel Morad &copy; 2020</span>

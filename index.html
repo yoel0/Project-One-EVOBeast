@@ -4,14 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EVOBeast</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" text="text/css" href="./style.css" />
   </head>
   <body>
-    <main>
-      <div class="floor"></div>
-      <canvas id="canvas"></canvas>
-    </main>
-    <section>
+    <div id="container">
+      <aside id="top-left"><h2>EVObEAST</h2></aside>
+      <aside id="top-right"><h2 id="movement"></h2></aside>
+      <main>
+        <canvas id="game"><!-- play it, a game --></canvas>
+      </main>
+      <aside id="btm-left"><h2>100</h2></aside>
+      <aside id="btm-right"><h2 id="status">play the game</h2></aside>
+    </div>
+    <!-- <section>
       <div class="start-screen">
         <div class="game-title">
           <h2 class="rotate">EVO</h2>
@@ -28,9 +37,9 @@
         <div class="info-content">
           <h3>How To Play</h3>
           <p>
-            Use the w, a, s, d, keys to move EVO Beast and the space bar to
-            devour rabbits as you race to reach Evolution before the Hunter
-            devours you! Once you reach Evolution D E V O U R the Hunter.
+            Use the w, a, s, d, keys to move EVO Beast around and devour rabbits
+            as you race to reach Evolution before the Hunter devours you! Once
+            you reach Evolution D E V O U R the Hunter.
           </p>
           <br />
           <img src="./images/wabbit.gif" width="50" height="50" />
@@ -66,6 +75,7 @@
       /></a>
       <span id="copyright"> Created by Yoel Morad &copy; 2020</span>
     </footer>
+  -->
     <script src="./script.js"></script>
   </body>
 </html>

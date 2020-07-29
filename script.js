@@ -4,12 +4,25 @@ let game;
 let hero;
 let rabbit;
 let hunter;
-let hx = 6;
-let hy = 6;
-let rx = 6;
-let ry = 6;
+let hx = 4;
+let hy = 4;
+let rx = 4;
+let ry = 4;
 let num = 1;
 let killcounter = 0;
+
+// screen set ups
+const startScreen = document.querySelector(".start-screen");
+const infoScreen = document.querySelector(".info-screen");
+const wonScreen = document.querySelector(".won-screen");
+const gameoverScreen = document.querySelector(".gameover-screen");
+const startButton = document.querySelector("#startButton");
+const infoButton = document.querySelector("#infoButton");
+const infoClose = document.querySelector("#info-close");
+const menu = document.querySelector("#menu");
+const resetButton = document.querySelector("#resetButton");
+const menu2 = document.querySelector("#menu2");
+const resetButton2 = document.querySelector("#resetButton2");
 
 // Crawler Constructor function
 function Crawler(x, y, width, height, color) {
@@ -50,8 +63,14 @@ const detectHit = () => {
   ) {
     if (hero.evolved === true) {
       hunter.alive = false;
+      clearInterval(runGame);
+      game.style.display = "none";
+      wonScreen.style.display = "block";
     } else {
       hero.alive = false;
+      clearInterval(runGame);
+      game.style.display = "none";
+      gameoverScreen.style.display = "block";
     }
   }
 };
@@ -62,7 +81,7 @@ const gameLoop = () => {
   // move rabbit and hunter around map randomly
   hunterRabbitMovement();
   // display the x, y coordinates of our hero onto the DOM
-  movementDisplay.textContent = `X:${hero.x}\nY:${hero.y}`;
+  // movementDisplay.textContent = `X:${hero.x}\nY:${hero.y}`;
   // check if the rabbit is alive and
   // render the hero
   if (hero.alive) {
@@ -89,16 +108,17 @@ const movementHandler = (e) => {
   // w: 87, a:65, s:83, d:68
   switch (e.keyCode) {
     case 87: // w up
-      if (hero.y > 0) hero.y -= 20;
+      if (hero.y > 0) hero.y -= 10;
       break;
     case 83: // s down
-      if (hero.y + hero.height < game.height) hero.y += 20;
+      if (hero.y + hero.height < game.height) hero.y += 10;
+
       break;
     case 65: // a left
-      if (hero.x > 0) hero.x -= 20;
+      if (hero.x > 0) hero.x -= 10;
       break;
     case 68: // d right
-      if (hero.x + hero.width < game.width) hero.x += 20;
+      if (hero.x + hero.width < game.width) hero.x += 10;
       break;
     default:
       console.log("invalid keystroke");
@@ -107,24 +127,52 @@ const movementHandler = (e) => {
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded");
   // DOM REFS
-  movementDisplay = document.getElementById("movement");
+  // movementDisplay = document.getElementById("movement");
   game = document.getElementById("game");
   // CANVAS CONFIG
-  game.setAttribute("height", 500);
-  game.setAttribute("width", 800);
+  game.setAttribute("height", 600);
+  game.setAttribute("width", 960);
   ctx = game.getContext("2d");
-  // CHARACTER REFS
+  document.addEventListener("keydown", movementHandler);
+  let runGame = setInterval(gameLoop, 30);
+  clearInterval(runGame);
+  startScreen.style.display = "block";
+  startButton.addEventListener("click", startGame);
+  infoButton.addEventListener("click", infoContent);
+  infoClose.addEventListener("click", backStartScreen);
+  menu.addEventListener("click", backStartScreen);
+  resetButton.addEventListener("click", startGame);
+  menu2.addEventListener("click", backStartScreen);
+  resetButton2.addEventListener("click", startGame);
+});
+// make start button function
+const startGame = () => {
   hero = new Crawler(200, 100, 50, 50, "red");
   rabbit = new Crawler(300, 100, 60, 60, "white");
   hunter = new Crawler(480, 280, 70, 70, "black");
-  document.addEventListener("keydown", movementHandler);
-  let runGame = setInterval(gameLoop, 60);
-});
+  startScreen.style.display = "none";
+  wonScreen.style.display = "none";
+  gameoverScreen.style.display = "none";
+  game.style.display = "block";
+  runGame = setInterval(gameLoop, 30);
+};
+// make info content window appear
+const infoContent = () => {
+  startScreen.style.display = "none";
+  infoScreen.style.display = "block";
+};
+// go back to start screen from info screen
+const backStartScreen = () => {
+  infoScreen.style.display = "none";
+  wonScreen.style.display = "none";
+  gameoverScreen.style.display = "none";
+  startScreen.style.display = "block";
+};
 
-window.addEventListener("resize", function () {
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
-});
+// window.addEventListener("resize", function () {
+//   canvas.height = window.innerHeight;
+//   canvas.width = window.innerWidth;
+// });
 
 // function made to make new rabbits
 function makeNewRabbit() {
@@ -177,9 +225,10 @@ function hunterRabbitMovement() {
 // -- Once this is Done ill have a MVP. --
 
 // TODO 2:
-// Work on game Menu Start Game, How to Play, You won screen, Game over screen.
+// Work on game Menu Start Game, How to Play, You won screen, Game over screen. -DONE
 // create a function onclick of start game will start game
-// create a function onclick of how to play will render instruction from hidden to visble will show you the button to close instructions.
+// when the user clicks start game everything else dissapers and canvas appears then game becomes active
+// use display none and display block to toggle between the things that disapear and appear
 // create a restart game function if you get killed game over screen restart game button
 // create a win game function if you win win screen restart game button.
 // Add Sprites.

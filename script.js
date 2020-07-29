@@ -1,7 +1,7 @@
 let movementDisplay;
 let ctx;
 let game;
-let heroine;
+let hero;
 let rabbit;
 let hunter;
 let hx = 6;
@@ -178,5 +178,9 @@ function hunterRabbitMovement() {
 
 // TODO 2:
 // Work on game Menu Start Game, How to Play, You won screen, Game over screen.
+// create a function onclick of start game will start game
+// create a function onclick of how to play will render instruction from hidden to visble will show you the button to close instructions.
+// create a restart game function if you get killed game over screen restart game button
+// create a win game function if you win win screen restart game button.
 // Add Sprites.
 // Add sounds.

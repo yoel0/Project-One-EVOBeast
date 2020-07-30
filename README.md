@@ -70,7 +70,7 @@ if (
 
 ## Deployment
 
-This Game Project was deployed using github.io [EVOBeast](https://yoel0.github.io/Project-One-EVOBeast/)
+This Game Project was deployed using github.io, check it out and play here: <br> [EVOBeast](https://yoel0.github.io/Project-One-EVOBeast/)
 
 ## Contributing
 
@@ -102,5 +102,5 @@ This project is license FREE let me get that drumroll for the PEOPLE, yea boi.
 - What can I really say next about this TITAN in the water, other then why this man is not the Tech Lead for every company out there in existence baffles me, his technical approach and capacity to withstand hordes of complexities while shuffling through them like he was born for this should have earned him the Medal of Honor at this point.<br />
   [PeteFitton](https://github.com/petefitton)
 
-- And lastly we have the CSS Sorcerer the Gaming Berserker the one the only the truest Bublbasaur out there Adam motherbleeping Honore drop that mic!!! this man has inspired my thought process and flow so much that there are not enough words to describe it, he has been the catalyst and conduit that birthed my creative fire, his a monster but most importantly a Legend.<br />
+- And lastly we have the CSS Sorcerer the Gaming Berserker the one the only the truest Bulbasaur out there Adam motherbleeping Honore drop that mic!!! this man has inspired my thought process and flow so much that there are not enough words to describe it, he has been the catalyst and conduit that birthed my creative fire, his a monster but most importantly a Legend.<br />
   [AdamHonore](https://github.com/ahonore42)

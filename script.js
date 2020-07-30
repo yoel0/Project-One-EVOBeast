@@ -40,8 +40,44 @@ function Crawler(x, y, width, height, color, type) {
   this.movementState = "idle";
   this.movementStep = 1;
   this.render = function () {
-    if (this.type === hero) {
-      ctx.drawImage();
+    if (this.type === "hero") {
+      ctx.drawImage(
+        heroImage,
+        16,
+        26,
+        60,
+        80,
+        this.x,
+        this.y,
+        this.width,
+        this.height
+      );
+    }
+    if (this.type === "rabbit") {
+      ctx.drawImage(
+        rabbitImage,
+        0,
+        258,
+        38,
+        53,
+        this.x,
+        this.y,
+        this.width,
+        this.height
+      );
+    }
+    if (this.type === "hunter") {
+      ctx.drawImage(
+        hunterImage,
+        22,
+        52,
+        62,
+        53,
+        this.x,
+        this.y,
+        this.width,
+        this.height
+      );
     }
   };
 }
@@ -52,14 +88,17 @@ const detectHit = () => {
     hero.x + hero.width > rabbit.x &&
     hero.x < rabbit.x + rabbit.width &&
     hero.y + hero.height > rabbit.y &&
-    hero.y < rabbit.y + rabbit.height
+    hero.y < rabbit.y + rabbit.height &&
+    rabbit.alive === true
   ) {
     rabbit.alive = false;
     // add killcounter
     killcounter++;
+    console.log(killcounter);
     // when killcounter = 8 then evolve
     if (killcounter >= 8) {
       hero.evolved = true;
+      heroImage.src = "./images/EVOBeastForm-2.png";
     }
   }
   if (
@@ -205,6 +244,8 @@ const startGame = () => {
   wonScreen.style.display = "none";
   gameoverScreen.style.display = "none";
   game.style.display = "block";
+  killcounter = 0;
+  heroImage.src = "./images/EVOBeastForm-1.png";
   runGame = setInterval(gameLoop, 30);
 };
 // make info content window appear

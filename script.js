@@ -10,6 +10,9 @@ let ry = 10;
 let num = 1;
 let killcounter = 0;
 let keysPressed = [];
+let heroImage;
+let rabbitImage;
+let hunterImage;
 
 // screen set ups
 const startScreen = document.querySelector(".start-screen");
@@ -37,8 +40,9 @@ function Crawler(x, y, width, height, color, type) {
   this.movementState = "idle";
   this.movementStep = 1;
   this.render = function () {
-    ctx.fillStyle = this.color;
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    if (this.type === hero) {
+      ctx.drawImage();
+    }
   };
 }
 const detectHit = () => {
@@ -53,7 +57,7 @@ const detectHit = () => {
     rabbit.alive = false;
     // add killcounter
     killcounter++;
-    // when killcounter = 5 then evolve
+    // when killcounter = 8 then evolve
     if (killcounter >= 8) {
       hero.evolved = true;
     }
@@ -169,6 +173,12 @@ document.addEventListener("DOMContentLoaded", () => {
   game.setAttribute("height", 600);
   game.setAttribute("width", 960);
   ctx = game.getContext("2d");
+  heroImage = new Image();
+  heroImage.src = "./images/EVOBeastForm-1.png";
+  rabbitImage = new Image();
+  rabbitImage.src = "./images/rabbit.png";
+  hunterImage = new Image();
+  hunterImage.src = "./images/hunter.png";
   document.addEventListener("keydown", (e) => {
     keysPressed[e.keyCode] = true;
   });

@@ -3,6 +3,8 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 body {
@@ -11,6 +13,7 @@ body {
   background-color: black;
   background-image: url("./images/pageBG.png");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 canvas {
@@ -158,7 +161,8 @@ h4 {
 }
 
 #copyright {
-  position: absolute;
+  /*position: absolute;*/
+  padding: 1rem;
   color: #ffffff;
   line-height: 32px;
   /* margin-left: 200px;
@@ -166,11 +170,28 @@ h4 {
   text-align: center; */
 }
 
+.yeet {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+}
+
 footer {
   position: absolute;
   width: 100%;
-  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* height: 55px; */
   bottom: 0px;
   background-color: rgba(0, 0, 0, 0.2);
-  position: fixed !important;
+  /*position: fixed !important;*/
+}
+
+@media only screen and (max-width: 900px) {
+  footer,
+  .yeet {
+    padding: 0.5rem;
+    display: block;
+  }
 }

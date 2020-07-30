@@ -1,15 +1,15 @@
-let movementDisplay;
 let ctx;
 let game;
 let hero;
 let rabbit;
 let hunter;
-let hx = 4;
-let hy = 4;
-let rx = 4;
-let ry = 4;
+let hx = 10;
+let hy = 10;
+let rx = 10;
+let ry = 10;
 let num = 1;
 let killcounter = 0;
+let keysPressed = [];
 
 // screen set ups
 const startScreen = document.querySelector(".start-screen");
@@ -25,14 +25,17 @@ const menu2 = document.querySelector("#menu2");
 const resetButton2 = document.querySelector("#resetButton2");
 
 // Crawler Constructor function
-function Crawler(x, y, width, height, color) {
+function Crawler(x, y, width, height, color, type) {
   this.x = x;
   this.y = y;
   this.width = width;
   this.height = height;
   this.color = color;
+  this.type = type;
   this.alive = true;
   this.evolved = false;
+  this.movementState = "idle";
+  this.movementStep = 1;
   this.render = function () {
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -51,7 +54,7 @@ const detectHit = () => {
     // add killcounter
     killcounter++;
     // when killcounter = 5 then evolve
-    if (killcounter >= 5) {
+    if (killcounter >= 8) {
       hero.evolved = true;
     }
   }
@@ -80,8 +83,8 @@ const gameLoop = () => {
   ctx.clearRect(0, 0, game.width, game.height);
   // move rabbit and hunter around map randomly
   hunterRabbitMovement();
-  // display the x, y coordinates of our hero onto the DOM
-  // movementDisplay.textContent = `X:${hero.x}\nY:${hero.y}`;
+  movementHandler();
+  animationHandler();
   // check if the rabbit is alive and
   // render the hero
   if (hero.alive) {
@@ -106,34 +109,72 @@ const gameLoop = () => {
 };
 const movementHandler = (e) => {
   // w: 87, a:65, s:83, d:68
-  switch (e.keyCode) {
-    case 87: // w up
-      if (hero.y > 0) hero.y -= 10;
+  if (keysPressed[87]) {
+    if (hero.y > 0) hero.y -= 6;
+    if (hero.movementState != "moveUp") {
+      hero.movementState = "moveUp";
+    }
+  }
+  if (keysPressed[83]) {
+    if (hero.y + hero.height < game.height) hero.y += 6;
+    if (hero.movementState != "moveDown") {
+      hero.movementState = "moveDown";
+    }
+  }
+  if (keysPressed[65]) {
+    if (hero.x > 0) hero.x -= 6;
+    if (hero.movementState != "moveLeft") {
+      hero.movementState = "moveLeft";
+    }
+  }
+  if (keysPressed[68]) {
+    if (hero.x + hero.width < game.width) hero.x += 6;
+    if (hero.movementState != "moveRight") {
+      hero.movementState = "moveRight";
+    }
+  }
+  if (
+    !keysPressed[87] &&
+    !keysPressed[83] &&
+    !keysPressed[65] &&
+    !keysPressed[68]
+  ) {
+    hero.movementState = "idle";
+  }
+};
+const animationHandler = () => {
+  switch (hero.movementState) {
+    case "moveUp":
+      console.log("we are moving up");
       break;
-    case 83: // s down
-      if (hero.y + hero.height < game.height) hero.y += 10;
-
+    case "moveDown":
+      console.log("move down");
       break;
-    case 65: // a left
-      if (hero.x > 0) hero.x -= 10;
+    case "moveLeft":
+      console.log("move left");
       break;
-    case 68: // d right
-      if (hero.x + hero.width < game.width) hero.x += 10;
+    case "moveRight":
+      console.log("move right");
       break;
-    default:
-      console.log("invalid keystroke");
+    case "idle":
+      console.log("idle");
+      break;
   }
 };
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded");
   // DOM REFS
-  // movementDisplay = document.getElementById("movement");
   game = document.getElementById("game");
   // CANVAS CONFIG
   game.setAttribute("height", 600);
   game.setAttribute("width", 960);
   ctx = game.getContext("2d");
-  document.addEventListener("keydown", movementHandler);
+  document.addEventListener("keydown", (e) => {
+    keysPressed[e.keyCode] = true;
+  });
+  document.addEventListener("keyup", (e) => {
+    keysPressed[e.keyCode] = false;
+  });
   let runGame = setInterval(gameLoop, 30);
   clearInterval(runGame);
   startScreen.style.display = "block";
@@ -147,9 +188,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // make start button function
 const startGame = () => {
-  hero = new Crawler(200, 100, 50, 50, "red");
-  rabbit = new Crawler(300, 100, 60, 60, "white");
-  hunter = new Crawler(480, 280, 70, 70, "black");
+  hero = new Crawler(200, 100, 50, 50, "red", "hero");
+  rabbit = new Crawler(300, 100, 60, 60, "white", "rabbit");
+  hunter = new Crawler(480, 280, 70, 70, "black", "hunter");
   startScreen.style.display = "none";
   wonScreen.style.display = "none";
   gameoverScreen.style.display = "none";
@@ -219,17 +260,5 @@ function hunterRabbitMovement() {
 }
 
 // TODO:
-// That heroine can be killed by hunter until its evolved - Kill counter that defines when the heroine evolves -DONE
-// ADD condtional that heroine cant kill hunter until its evolved -DONE
-// Get the Hunter and Rabbits to move around the map randomly. -DONE
-// -- Once this is Done ill have a MVP. --
-
-// TODO 2:
-// Work on game Menu Start Game, How to Play, You won screen, Game over screen. -DONE
-// create a function onclick of start game will start game
-// when the user clicks start game everything else dissapers and canvas appears then game becomes active
-// use display none and display block to toggle between the things that disapear and appear
-// create a restart game function if you get killed game over screen restart game button
-// create a win game function if you win win screen restart game button.
 // Add Sprites.
 // Add sounds.

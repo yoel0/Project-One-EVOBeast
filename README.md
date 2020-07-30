@@ -102,5 +102,19 @@ This project is license FREE let me get that drumroll for the PEOPLE, yea boi.
 - What can I really say next about this TITAN in the water, other then why this man is not the Tech Lead for every company out there in existence baffles me, his technical approach and capacity to withstand hordes of complexities while shuffling through them like he was born for this should have earned him the Medal of Honor at this point.<br />
   [PeteFitton](https://github.com/petefitton)
 
-- And lastly we have the CSS Sorcerer the Gaming Berserker the one the only the truest Bulbasaur out there Adam motherbleeping Honore drop that mic!!! this man has inspired my thought process and flow so much that there are not enough words to describe it, he has been the catalyst and conduit that birthed my creative fire, his a monster but most importantly a Legend.<br />
+- Lastly we have the CSS Sorcerer the one the only the truest Bulbasaur out there Adam motherbleeping Honore drop that mic!!! this man has inspired my thought process and flow so much that there are not enough words to describe it, he has been the catalyst and conduit that birthed my creative fire, his a monster but most importantly a Legend.<br />
   [AdamHonore](https://github.com/ahonore42)
+
+## Special Shouout's to my DevFamily
+
+- Brenden, for contributing Randomized Movement Theory, creating our own pseudo movement function!
+  [BrandenGoldenberg](https://github.com/BGoldenberg161)
+
+- Anthony, I honestly view this man as a Teacher who has thaught me and helped me through the toughest of mental road blocks, the way he views code, defines it and reads it is beyond me, If programming languages had an awakened state this indvidual has most certainly opened up that box and has two hands in it. <br>
+  [AnthonyGregis](https://github.com/anthonygregis)
+
+- Sameh, a Bull in a China shop, he shakes sheets of code like a lunchable, love you bro.
+  [SamehYasser](https://github.com/kinawy)
+
+- Shane, a brother in every sense of the word, whenever self doubt kicks in this beautiful soul kicks back.
+  [ShaneBendak](https://github.com/SLBendak)

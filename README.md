@@ -90,17 +90,17 @@ This project is license FREE let me get that drumroll for the PEOPLE, yea boi.
 
 ## Acknowledgments
 
-- Hat tip to Rome the General of the Carpatian Mountains! for contributing the "Spawn Rabbits" function concept.
+- Hat tip to Rome the General of the Carpatian Mountains! for contributing the "Spawn Rabbits" function concept.<br />
   [RomeBell](https://github.com/romebell)
 
-- Full on courtsies and bowdowns to my Coding Heroine, Lemon Squeezy The REAL YEEZY Garrett, for contributing styling knowledge bombs and letting me know that I can truly be the best nerd possible, contingent I accept and let my inner nerd HOWL. rawr~
+- Full on courtsies and bowdowns to my Coding Heroine, Lemon Squeezy The REAL YEEZY Garrett, for contributing styling knowledge bombs and letting me know that I can truly be the best nerd possible, contingent I accept and let my inner nerd HOWL. rawr~ <br />
   [LemonMarieGarrett](https://github.com/egarrett94)
 
-- Hommage to Sensei TAYTAY for her priceless feedback and input upon the Journey of Evo Beast, if not for her Evo Beast may have never been taking by the horns and rid like the bull it truly is, she pushed me and believed in me and for that no thanks can be thanks enough.
+- Hommage to Sensei TAYTAY for her priceless feedback and input upon the Journey of Evo Beast, if not for her Evo Beast may have never been taking by the horns and rid like the bull it truly is, she pushed me and believed in me and for that no thanks can be thanks enough.<br />
   [TaylorDarneille](https://github.com/TaylorDarneille)
 
-- What can I really next about this TITAN in the water, other then why this man is not the Tech Lead for every company out there in existence baffles me, his technical approach and capacity to withstand hordes of complexities while shuffling through them like was born for this should have earned him the Medal of Honor at this point.
+- What can I really next about this TITAN in the water, other then why this man is not the Tech Lead for every company out there in existence baffles me, his technical approach and capacity to withstand hordes of complexities while shuffling through them like was born for this should have earned him the Medal of Honor at this point.<br />
   [PeteFitton](https://github.com/petefitton)
 
-- And Lastly we have the CSS Sorcerer the Gaming Berserker the one the only the truest Bublbasaur out there Adam motherbleeping Honore drop that mic!!! this man has inspired my thought process and flow so much that there are not enough words to describe he has been the catalyst and conduit that birthed my creative fire, his a monster but most importantly a Legend.
+- And Lastly we have the CSS Sorcerer the Gaming Berserker the one the only the truest Bublbasaur out there Adam motherbleeping Honore drop that mic!!! this man has inspired my thought process and flow so much that there are not enough words to describe he has been the catalyst and conduit that birthed my creative fire, his a monster but most importantly a Legend.<br />
   [AdamHonore](https://github.com/ahonore42)

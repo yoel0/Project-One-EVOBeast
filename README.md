@@ -1,6 +1,6 @@
 # EVO Beast
 
-EVO Beast was an original game idea, birthed by Yoel Morad from the duress and toils of the roughest cohort to exist in Software Engineering Imersives the 713 Cutthroats, this is the Blueprint of what may quite possibly the greatest browser window game to grace the pixels on your screen babes.
+EVO Beast was an original game idea, birthed by Yoel Morad from the duress and toils of the roughest cohort to exist in Software Engineering Imersives the 713 Cutthroats, this is the Blueprint of what may quite possibly be the greatest browser window game to grace the pixels on your screen babes.
 
 ## EVO Beast Story
 

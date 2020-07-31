@@ -3,10 +3,10 @@ let game;
 let hero;
 let rabbit;
 let hunter;
-let hx = 10;
-let hy = 10;
-let rx = 10;
-let ry = 10;
+let hx = 7;
+let hy = 7;
+let rx = 7;
+let ry = 7;
 let num = 1;
 let killcounter = 0;
 let keysPressed = [];
@@ -26,6 +26,10 @@ const menu = document.querySelector("#menu");
 const resetButton = document.querySelector("#resetButton");
 const menu2 = document.querySelector("#menu2");
 const resetButton2 = document.querySelector("#resetButton2");
+
+// musica
+var bgmusic = document.getElementById("bgm");
+bgmusic.volume = 0.2;
 
 // Crawler Constructor function
 function Crawler(x, y, width, height, color, type) {
@@ -95,8 +99,8 @@ const detectHit = () => {
     // add killcounter
     killcounter++;
     console.log(killcounter);
-    // when killcounter = 8 then evolve
-    if (killcounter >= 8) {
+    // when killcounter = 10 then evolve
+    if (killcounter >= 10) {
       hero.evolved = true;
       heroImage.src = "./images/EVOBeastForm-2.png";
     }
@@ -247,6 +251,7 @@ const startGame = () => {
   killcounter = 0;
   heroImage.src = "./images/EVOBeastForm-1.png";
   runGame = setInterval(gameLoop, 30);
+  bgmusic.play();
 };
 // make info content window appear
 const infoContent = () => {
@@ -259,6 +264,8 @@ const backStartScreen = () => {
   wonScreen.style.display = "none";
   gameoverScreen.style.display = "none";
   startScreen.style.display = "block";
+  bgmusic.pause();
+  bgmusic.currentTime = 0;
 };
 
 // window.addEventListener("resize", function () {
@@ -280,16 +287,16 @@ function makeNewRabbit() {
 // function to make rabbit and hunter move around randomly
 function hunterRabbitMovement() {
   num++;
-  if (Math.floor((num * Math.random()) % 40) == 0) {
+  if (Math.floor((num * Math.random()) % 41) == 0) {
     rx = -1 * rx;
   }
-  if (Math.floor((num * Math.random()) % 20) == 0) {
+  if (Math.floor((num * Math.random()) % 31) == 0) {
     ry = -1 * ry;
   }
-  if (Math.floor((num * Math.random()) % 40) == 0) {
+  if (Math.floor((num * Math.random()) % 41) == 0) {
     hx = -1 * hx;
   }
-  if (Math.floor((num * Math.random()) % 20) == 0) {
+  if (Math.floor((num * Math.random()) % 31) == 0) {
     hy = -1 * hy;
   }
   rabbit.x += Math.random() * rx;

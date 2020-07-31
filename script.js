@@ -3,10 +3,10 @@ let game;
 let hero;
 let rabbit;
 let hunter;
-let hx = 7;
-let hy = 7;
-let rx = 7;
-let ry = 7;
+let hx = 6;
+let hy = 6;
+let rx = 6;
+let ry = 6;
 let num = 1;
 let killcounter = 0;
 let keysPressed = [];
@@ -287,16 +287,16 @@ function makeNewRabbit() {
 // function to make rabbit and hunter move around randomly
 function hunterRabbitMovement() {
   num++;
-  if (Math.floor((num * Math.random()) % 41) == 0) {
+  if (Math.floor((num * Math.random()) % 40) == 0) {
     rx = -1 * rx;
   }
-  if (Math.floor((num * Math.random()) % 31) == 0) {
+  if (Math.floor((num * Math.random()) % 20) == 0) {
     ry = -1 * ry;
   }
-  if (Math.floor((num * Math.random()) % 41) == 0) {
+  if (Math.floor((num * Math.random()) % 40) == 0) {
     hx = -1 * hx;
   }
-  if (Math.floor((num * Math.random()) % 31) == 0) {
+  if (Math.floor((num * Math.random()) % 20) == 0) {
     hy = -1 * hy;
   }
   rabbit.x += Math.random() * rx;
@@ -316,7 +316,3 @@ function hunterRabbitMovement() {
     hy = -1 * hy;
   }
 }
-
-// TODO:
-// Add Sprites.
-// Add sounds.

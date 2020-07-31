@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
   rabbitImage = new Image();
   rabbitImage.src = "./images/rabbit.png";
   hunterImage = new Image();
-  hunterImage.src = "./images/hunter.png";
+  hunterImage.src = "./images/Hunter.png";
   document.addEventListener("keydown", (e) => {
     keysPressed[e.keyCode] = true;
   });

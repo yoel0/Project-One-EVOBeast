@@ -102,7 +102,7 @@ const detectHit = () => {
     // when killcounter = 10 then evolve
     if (killcounter >= 10) {
       hero.evolved = true;
-      heroImage.src = "./images/EVOBeastForm-2.png";
+      heroImage.src = "./images/EvoBeastForm-2.png";
     }
   }
   if (
